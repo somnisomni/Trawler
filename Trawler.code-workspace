@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "[ Project Root ]"
+		},
+		{
+			"path": "packages/worker",
+			"name": "Worker"
+		},
+		{
+			"path": "packages/config-ui",
+			"name": "Config UI"
+		}
+	],
+	"settings": {}
+}

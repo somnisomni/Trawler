@@ -1,0 +1,12 @@
+packages:
+  - "packages/*"
+
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true
+
+catalog:
+  "@types/node": "^24"
+  "eslint": "^10.10.0"
+  "typescript": "^6"
+  "typescript-eslint": "^8.69.0"
