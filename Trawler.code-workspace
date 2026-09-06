@@ -9,8 +9,8 @@
 			"name": "Worker"
 		},
 		{
-			"path": "packages/config-ui",
-			"name": "Config UI"
+			"path": "packages/webui",
+			"name": "Web UI"
 		}
 	],
 	"settings": {}

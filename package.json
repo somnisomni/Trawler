@@ -13,7 +13,7 @@
   },
   "scripts": {
     "@worker": "pnpm -F @trawler/worker",
-    "@config-ui": "pnpm -F @trawler/config-ui",
+    "@webui": "pnpm -F @trawler/webui",
     "lint": "eslint"
   },
   "devDependencies": {

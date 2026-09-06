@@ -1,5 +1,5 @@
 {
-	"name": "@trawler/config-ui",
+	"name": "@trawler/webui",
 	"private": true,
 	"type": "module",
   "author": "somni <me@somni.one>",
