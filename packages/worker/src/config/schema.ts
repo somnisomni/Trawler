@@ -1,12 +1,12 @@
 import { z } from "zod";
-import { DEFAULT_SQLITE_DB_FILE_PATH } from "../common";
+import { buildFilePathInConfigDirectory } from ".";
 
 export const configSchema = z.object({
   database: z.object({
     type: z.enum([ "sqlite", "postgresql" ]).default("sqlite"),
 
     sqlite: z.object({
-      path: z.string().default(DEFAULT_SQLITE_DB_FILE_PATH),
+      path: z.string().default(buildFilePathInConfigDirectory("trawler.db")),
     }).prefault({}),
 
     postgresql: z.object({

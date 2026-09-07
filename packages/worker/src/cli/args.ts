@@ -1,4 +1,4 @@
-import { DEFAULT_CONFIG_FILE_PATH } from "../common";
+import Config from "../config";
 import { buildHelpMessage } from "./help";
 
 type ArgDefinition = {
@@ -47,7 +47,7 @@ export const argDefinitions: { [x: string]: ArgDefinition } = {
     short: "c",
     description: "Path to the configuration file",
     type: "string",
-    default: DEFAULT_CONFIG_FILE_PATH,
+    default: Config.defaultConfigFilePath,
 
     handle(value: string): boolean {
       process.env.TRAWLER_CONFIG_FILE = value;
