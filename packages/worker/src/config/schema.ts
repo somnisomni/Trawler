@@ -28,3 +28,12 @@ export const configSchema = z.object({
 });
 
 export type ConfigSchema = z.infer<typeof configSchema>;
+
+export function buildSqliteUrl(config: ConfigSchema): string {
+  return `file:${config.database.sqlite.path}`;
+}
+
+export function buildPostgresqlUrl(config: ConfigSchema): string {
+  const { host, port, user, password, database } = config.database.postgresql;
+  return `postgresql://${user}:${password}@${host}:${port}/${database}`;
+}

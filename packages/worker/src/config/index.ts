@@ -35,9 +35,10 @@ export function buildFilePathInConfigDirectory(fileName: string): string {
 export default class Config {
   private static readonly DEFAULT_CONFIG_FILE_NAME = "config.json";
 
-  public static instance: Config | null = null;
-  public config: ConfigSchema | null = null;
+  private static _instance: Config | null = null;
+  public static get instance(): Config | null { return this._instance; }
 
+  public config: ConfigSchema | null = null;
   private configFilePath: string | null = null;
 
   private constructor() { }
@@ -51,7 +52,7 @@ export default class Config {
     let configData: string;
 
     Logger.log("Loading configuration...");
-    Logger.debug(`Use configuration file: ${configFilePath}`);
+    Logger.debug(`Using configuration file: ${configFilePath}`);
 
     // #1. Read the configuration file
     let shouldCreateConfigFile = false;
@@ -93,13 +94,13 @@ export default class Config {
     const configInstance = new Config();
     configInstance.config = result.data;
     configInstance.configFilePath = configFilePath;
-    this.instance = configInstance;
+    this._instance = configInstance;
 
     Logger.log("Configuration loaded successfully.");
 
     // #5. Create the configuration file if it doesn't exist
     if(shouldCreateConfigFile) {
-      await this.instance.save();
+      await this._instance.save();
     }
   }
 

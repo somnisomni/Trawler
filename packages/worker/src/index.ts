@@ -2,6 +2,7 @@ import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { handleArgs } from "./cli";
 import Config from "./config";
+import Database from "./db";
 import Logger from "./logging";
 
 if(!handleArgs()) {
@@ -9,6 +10,7 @@ if(!handleArgs()) {
 }
 
 await Config.loadConfig();
+await Database.initialize();
 
 const app = new Hono();
 
